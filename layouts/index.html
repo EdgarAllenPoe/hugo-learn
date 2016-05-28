@@ -8,5 +8,11 @@
 </head>
 <body>
 	This will be the home page.
+{{ range first 10 .Data.Pages }}
+  <h1>{{ .Title }}</h1>
+  <h2>{{ .Date.Format "Mon, Jan 2, 2006" }}</h2>
+  {{ .Content }}
+{{end}}
+  <p><a href="{{ .Site.BaseURL }}">Home</a></p>
 </body>
 </html>
